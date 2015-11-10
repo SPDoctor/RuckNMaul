@@ -1,2 +1,49 @@
 ﻿body {
+  font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
 }
+
+#task-panel {
+  padding: 0;
+}
+
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.task-entry {
+  display: block;
+  transition: background-color .2s linear;
+  cursor: pointer;
+}
+
+.task-entry:hover,
+.task-entry .selected {
+  background-color: silver;
+}
+
+.task-entry::after {
+  display: block;
+  clear: both;
+  content: ' ';
+}
+
+.task-title, .task-prio {
+  display: inline-block;
+  float: left;
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
+.task-title {
+  font-weight: bold;
+  width: 95%;
+}
+
+.task-prio {
+  text-align: center;
+  height: inherit;
+  width: 5%;
+}
+
