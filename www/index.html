@@ -2,48 +2,72 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <!--
+	<meta charset="utf-8" />
+	<!--
 			Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
 			For details, see http://go.microsoft.com/fwlink/?LinkID=617521
 	-->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-    <title>RuckNMaul</title>
-    <!-- RuckNMaul references -->
-    <link href="css/index.css" rel="stylesheet" />
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+	<title>RuckNMaul</title>
+	<!-- RuckNMaul references -->
+	<link href="css/index.css" rel="stylesheet" />
 </head>
 
 <body>
-    <p>Ruck 'n' Maul</p>
-    <button id="loadBtn" onclick="load()"></button>
-    <div id="task-panel">
-        <ul class="tast-list">
-            <li class="task-entry">
-                <div class="task-title">Have a cup of tea</div>
-                <div class="tast-prio">10</div>
-            </li>
-            <li class="task-entry">
-                <div class="task-title">Hackathon project design</div>
-                <div class="tast-prio">15</div>
-            </li>
-            <li>
-                <div>Hackathon project implementation</div>
-                <div>25</div>
-            </li>
-            <li>
-                <div>Hackathon project win celebration</div>
-                <div>5</div>
-            </li>
-            <li>
-                <div>Hackathon project failure post-mortem</div>
-                <div>15</div>
-            </li>
-        </ul>
-    </div>
-    <!-- Cordova reference, this is added to your app when it's built. -->
-    <script src="cordova.js"></script>
-    <script src="scripts/platformOverrides.js"></script>
-    <script src="scripts/index.js"></script>
+	<p>Ruck 'n' Maul</p>
+	<button id="loadBtn" onclick="load()">Load</button>
+	<div id="task-panel" class="panel-primary">
+		<ul class="task-list">
+			<li class="task-entry">
+				<a onClick="showResultsPanel">
+					<div class="task-title">Have a cup of tea</div>
+					<div class="task-prio">10</div>
+				</a>
+			</li>
+			<li class="task-entry">
+				<a onClick="showResultsPanel">
+					<div class="task-title">Hackathon project design</div>
+					<div class="task-prio">15</div>
+				</a>
+			</li>
+			<li class="task-entry">
+				<a onClick="showResultsPanel">
+					<div class="task-title">Hackathon project implementation</div>
+					<div class="task-prio">25</div>
+				</a>
+			</li>
+			<li class="task-entry">
+				<a onClick="showResultsPanel">
+					<div class="task-title">Hackathon project win celebration</div>
+					<div class="task-prio">50</div>
+				</a>
+			</li>
+			<li class="task-entry">
+				<a onClick="showResultsPanel">
+					<div class="task-title">Hackathon project failure post-mortem</div>
+					<div class="task-prio">15</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div id="result-panel" class="panel-secondary">
+		<div>
+			<h1>Have a cup of tea</h1>
+			<h2>15</h2>
+			<p>
+				Lorem ipsum blah blah blah blah blah blah blah blah blah
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+				blah blah blah blah blah blah blah blah blah blah blah blah
+				blah blah blah blah blah blah
+			</p>
+		</div>
+		<p class="panel-navigation"><button onclick="setPanels('panel-primary', 'panel-secondary')">Back Home.</button></p>
+	</div>
+
+	<!-- Cordova reference, this is added to your app when it's built. -->
+	<script src="cordova.js"></script>
+	<script src="scripts/platformOverrides.js"></script>
+	<script src="scripts/index.js"></script>
 </body>
 
 </html>
